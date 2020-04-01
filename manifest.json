@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "Auto buff follow",
+	"version": "1.0.0",
+	"description": "Một tiện ích giúp bạn tăng follow facebook.",
+	"icons": {
+		"128":"./icon.png"
+	},
+	"author": "KB2A Team",
+	"browser_action": {
+		"default_icon": {                        
+		  "32": "./icon.png"            
+		},
+		"default_title": "Buff follow",
+		"default_popup": "popup/popup.html"         
+	},
+	"background": {
+    "scripts": ["bg.js"],
+    "persistent": false
+  	},
+	"permissions": [
+		"storage",
+		"tabs"
+	],
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+		  	"js": ["exec.js"]
+		}
+	]
+}
